@@ -30,5 +30,6 @@ jobs:
           README_PATH: README.md
           # 自訂 bot commit 訊息
           COMMIT_MESSAGE: 'chore(activity-log): update recent activity'
-          # 輸出樣式（可選）：compact 或 full
-          OUTPUT_STYLE: compact
+          # 輸出樣式（可選）：MARKDOWN 或 HTML（必須其中一個）
+          # 因為我們要把內容寫回 README.md，請使用 MARKDOWN
+          OUTPUT_STYLE: MARKDOWN
