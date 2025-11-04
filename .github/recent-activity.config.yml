@@ -1,0 +1,18 @@
+settings:
+  # username: (optional) defaults to repository owner
+  # leave username out to use repository owner automatically
+  commit_msg: "chore(recent-activity): update activity log"
+  max_lines: 5
+  readme_file: "./README.md"
+  commit_name: "readme-bot"
+  commit_email: "41898282+github-actions[bot]@users.noreply.github.com"
+
+# Example: disable certain event types (optional)
+# disabled_events:
+#   - star
+#   - watch
+
+# Example: whitelist only certain event types (optional)
+# whitelisted_events:
+#   - push
+#   - release

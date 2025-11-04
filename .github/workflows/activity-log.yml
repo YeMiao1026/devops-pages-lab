@@ -18,8 +18,13 @@ jobs:
       - name: Generate activity log
         uses: readme-workflows/recent-activity@main
         with:
+          # 使用 repo owner 作為預設 GH 使用者（action 預設也會使用 repository owner）
+          GH_USERNAME: ${{ github.repository_owner }}
+          # 指定 config 檔案（我們會在 .github/recent-activity.config.yml 建立範本）
+          CONFIG_FILE: './.github/recent-activity.config.yml'
+        env:
+          # 用 PAT 或 repo secret 的 TOKEN 來給 action 做 push
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          COMMIT_MSG: "chore: update activity log"
 
       - name: Push changes
         run: |
