@@ -18,6 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Debug README markers
+        run: |
+          echo "---- README.md content ----"
+          sed -n '1,300p' README.md || true
+          echo "---- Searching for common activity-log markers ----"
+          grep -nE 'START_SECTION:activity_log|activity-log:start|activity-log:START|ACTIVITY_LOG_START|ACTIVITY_LOG_END|activity-log:END|END_SECTION:activity_log|activity-log:end|activity_log:start|activity_log:end|activity-log-start|activity-log-end|<!-- activity-log |<!-- START_SECTION:activity_log' README.md || true
+          echo "---- End debug ----"
       - uses: TheDanniCraft/activity-log@v1
         with:
           # 必要：要抓取活動的 GitHub 使用者（repo owner）
