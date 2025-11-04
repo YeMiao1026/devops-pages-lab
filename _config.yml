@@ -1,0 +1,5 @@
+title: "我的 DevOps 成果"
+description: "這是我在 DevOps 課程中，使用 GitHub Actions 自動化部署的網站。"
+remote_theme: jekyll/minima
+markdown: kramdown
+paginate: 5

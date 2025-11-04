@@ -5,8 +5,9 @@ on:
   # 1. 手動觸發 (workflow_dispatch)
   workflow_dispatch:
   # 2. 定時觸發 (schedule) - 例如每6小時
-#   schedule:
-#     - cron: '0 */6 * * *' 
+  # schedule:
+    # 每 6 小時執行一次：'0 */6 * * *'（在 O 級報告中請說明選擇此頻率的理由）
+    # - cron: '0 */6 * * *'
   # 3. 每次 push 到 main 時 (可選)
   push:
     branches:
@@ -17,13 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: TheDanniCraft/activity-log@v1
+      - uses: TheDanniCraft/activity-log@v1.2
         with:
-          # 使用你剛才存的 Secret
-          GITHUB_TOKEN: ${{ secrets.TOKEN }} 
-          # 可選：設定你的 GitHub ID
-          USER_ID: ${{ github.repository_owner_id }} 
-          # 可選：要抓取的活動類型
-          TYPES: 'PushEvent,CreateEvent,IssuesEvent' 
-          # 可選：只顯示 5 筆
-          MAX_LINES: 5
+          # 使用你剛才存的 Personal Access Token（請先在 repo Secrets 中建立名稱為 TOKEN 的 secret）
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          # 設定要抓取的使用者帳號，使用 repository 的 owner（比 numeric id 更穩健）
+          USER_ID: ${{ github.repository_owner }}
+          # 只顯示 Push 事件（示範客製化）
+          TYPES: 'PushEvent'
+          # 最多顯示 3 行（示範客製化，O 級可在報告中說明為何選 3）
+          MAX_LINES: 3
+          # 自訂 bot commit 訊息（讓 commit 訊息更具可讀性）
+          COMMIT_MESSAGE: 'chore(activity-log): update recent activity'

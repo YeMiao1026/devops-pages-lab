@@ -1,0 +1,14 @@
+# Jekyll/site
+_site/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+
+# Logs
+npm-debug.log*
