@@ -15,6 +15,8 @@ jobs:
 
       - name: Generate activity log
         uses: readme-workflows/recent-activity@main
+        # 如果 action 因為外部 telemetry 錯誤而失敗，也不要終止整個 job
+        continue-on-error: true
         with:
           # 使用 repo owner 作為預設 GH 使用者（action 預設也會使用 repository owner）
           GH_USERNAME: ${{ github.repository_owner }}
@@ -23,6 +25,10 @@ jobs:
         env:
           # 用 PAT 或 repo secret 的 TOKEN 來給 action 做 push
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          # 嘗試避開 action 可能會呼叫的外部 telemetry endpoint（設為空值）
+          RECENT_ACTIVITY_URL: ''
+          RECENT_ACTIVITY_PASSKEY: ''
+          RECENT_ACTIVITY_PARAMS: ''
 
       - name: Push changes
         run: |
