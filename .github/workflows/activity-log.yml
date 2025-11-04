@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: TheDanniCraft/activity-log@v1.2
+      - uses: TheDanniCraft/activity-log@v1
         with:
           # 使用你剛才存的 Personal Access Token（請先在 repo Secrets 中建立名稱為 TOKEN 的 secret）
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
