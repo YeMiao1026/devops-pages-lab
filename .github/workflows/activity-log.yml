@@ -1,0 +1,29 @@
+name: Update README with Activity
+
+on:
+  # 觸發時機：
+  # 1. 手動觸發 (workflow_dispatch)
+  workflow_dispatch:
+  # 2. 定時觸發 (schedule) - 例如每6小時
+#   schedule:
+#     - cron: '0 */6 * * *' 
+  # 3. 每次 push 到 main 時 (可選)
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: TheDanniCraft/activity-log@v1.2 
+        with:
+          # 使用你剛才存的 Secret
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} 
+          # 可選：設定你的 GitHub ID
+          USER_ID: ${{ github.repository_owner_id }} 
+          # 可選：要抓取的活動類型
+          TYPES: 'PushEvent,CreateEvent,IssuesEvent' 
+          # 可選：只顯示 5 筆
+          MAX_LINES: 5
