@@ -13,3 +13,16 @@
 <!-- ACTIVITY_LOG_END -->
 <!-- activity-log:END -->
 <!-- END_SECTION:activity_log -->
+<!-- 以下為更多相容性標記（不同 action/工具常用格式） -->
+<!-- activity-log:start -->
+<!-- activity-log:end -->
+<!-- activity_log:start -->
+<!-- activity_log:end -->
+<!-- activity-log-start -->
+<!-- activity-log-end -->
+<!-- activity-log -->
+<!-- activity_log -->
+<!-- ACTIVITY:START -->
+<!-- ACTIVITY:END -->
+<!-- START_ACTIVITY_LOG -->
+<!-- END_ACTIVITY_LOG -->
