@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: TheDanniCraft/activity-log@v1.2 
+      - uses: TheDanniCraft/activity-log@v1
         with:
           # 使用你剛才存的 Secret
           GITHUB_TOKEN: ${{ secrets.TOKEN }} 
