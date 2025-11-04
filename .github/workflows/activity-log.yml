@@ -20,13 +20,15 @@ jobs:
       - uses: actions/checkout@v3
       - uses: TheDanniCraft/activity-log@v1
         with:
-          # 使用你剛才存的 Personal Access Token（請先在 repo Secrets 中建立名稱為 TOKEN 的 secret）
+          # 必要：要抓取活動的 GitHub 使用者（repo owner）
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          # 必要：用來 push 的 token（請在 repo Secrets 中建立名稱為 TOKEN 的 secret）
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          # 設定要抓取的使用者帳號，使用 repository 的 owner（比 numeric id 更穩健）
-          USER_ID: ${{ github.repository_owner }}
-          # 只顯示 Push 事件（示範客製化）
-          TYPES: 'PushEvent'
-          # 最多顯示 3 行（示範客製化，O 級可在報告中說明為何選 3）
-          MAX_LINES: 3
-          # 自訂 bot commit 訊息（讓 commit 訊息更具可讀性）
+          # 最大顯示筆數（action 使用 EVENT_LIMIT 參數控制）
+          EVENT_LIMIT: 3
+          # README 路徑（預設為 README.md）
+          README_PATH: README.md
+          # 自訂 bot commit 訊息
           COMMIT_MESSAGE: 'chore(activity-log): update recent activity'
+          # 輸出樣式（可選）：compact 或 full
+          OUTPUT_STYLE: compact
