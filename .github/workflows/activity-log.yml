@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          # Use the PAT stored in the repository secret `TOKEN` so subsequent git push
+          # operations are authenticated with the same token (must have repo permissions).
+          token: ${{ secrets.TOKEN }}
 
       - name: Generate activity log
         uses: readme-workflows/recent-activity@main
