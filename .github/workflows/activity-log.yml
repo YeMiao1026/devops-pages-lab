@@ -1,42 +1,30 @@
-name: Update README with Activity
+name: Update Activity Log
 
 on:
-  # 觸發時機：
-  # 1. 手動觸發 (workflow_dispatch)
+  schedule:
+    # 每天 UTC 02:00（台灣時間 10:00）執行一次
+    - cron: '0 2 * * *'
   workflow_dispatch:
-  # 2. 定時觸發 (schedule) - 例如每6小時
-  # schedule:
-    # 每 6 小時執行一次：'0 */6 * * *'（在 O 級報告中請說明選擇此頻率的理由）
-    # - cron: '0 */6 * * *'
-  # 3. 每次 push 到 main 時 (可選)
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Debug README markers
-        run: |
-          echo "---- README.md content ----"
-          sed -n '1,300p' README.md || true
-          echo "---- Searching for common activity-log markers ----"
-          grep -nE 'START_SECTION:activity_log|activity-log:start|activity-log:START|ACTIVITY_LOG_START|ACTIVITY_LOG_END|activity-log:END|END_SECTION:activity_log|activity-log:end|activity_log:start|activity_log:end|activity-log-start|activity-log-end|<!-- activity-log |<!-- START_SECTION:activity_log' README.md || true
-          echo "---- End debug ----"
-      - uses: TheDanniCraft/activity-log@v1
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate activity log
+        uses: Readme-Workflows/recent-activity@v2
         with:
-          # 必要：要抓取活動的 GitHub 使用者（repo owner）
-          GITHUB_USERNAME: ${{ github.repository_owner }}
-          # 必要：用來 push 的 token（請在 repo Secrets 中建立名稱為 TOKEN 的 secret）
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          # 最大顯示筆數（action 使用 EVENT_LIMIT 參數控制）
-          EVENT_LIMIT: 3
-          # README 路徑（預設為 README.md）
-          README_PATH: README.md
-          # 自訂 bot commit 訊息
-          COMMIT_MESSAGE: 'chore(activity-log): update recent activity'
-          # 輸出樣式（可選）：MARKDOWN 或 HTML（必須其中一個）
-          # 因為我們要把內容寫回 README.md，請使用 MARKDOWN
-          OUTPUT_STYLE: MARKDOWN
+          COMMIT_MSG: "chore: update activity log"
+
+      - name: Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update recent activity [skip ci]" || echo "No changes"
+          git push

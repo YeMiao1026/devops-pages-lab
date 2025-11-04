@@ -8,5 +8,20 @@
 > 這裡會自動填入你最近的 GitHub 活動（由 GitHub Actions 更新）
 <!-- activity-log:END -->
 <!-- END_SECTION:activity_log -->
-<!-- activity-log:start -->
-<!-- activity-log:end -->
+# DevOps Activity Log Site
+
+This page is automatically updated with your latest GitHub activity.
+
+---
+
+## 👨‍💻 Recent GitHub Activity
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+
+---
+
+Owner: Ye Miao  
+Course: DevOps  
+Deployed via GitHub Actions + GitHub Pages.
+
+<!-- 注意：若同時存在 `index.md` 與 `index.html`，GitHub Pages 會優先使用 `index.md`。 -->
