@@ -19,7 +19,7 @@ This page is automatically updated with your latest GitHub activity.
 1. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
 2. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
 3. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
-4. ⬆️ Pushed undefined commit(s) to [YeMiao1026/DevOpsA6](https://github.com/YeMiao1026/DevOpsA6)<br>
+4. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
 5. ⬆️ Pushed undefined commit(s) to [YeMiao1026/DevOpsA6](https://github.com/YeMiao1026/DevOpsA6)<br>
 <!--RECENT_ACTIVITY:end-->
 
