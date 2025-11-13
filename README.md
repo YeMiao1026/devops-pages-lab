@@ -16,11 +16,11 @@ This page is automatically updated with your latest GitHub activity.
 
 ## 👨‍💻 Recent GitHub Activity
 <!--RECENT_ACTIVITY:start-->
-1. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
-2. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
-3. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
-4. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
-5. ⬆️ Pushed undefined commit(s) to [YeMiao1026/devops-pages-lab](https://github.com/YeMiao1026/devops-pages-lab)<br>
+1. ⬆️ Pushed undefined commit(s) to [YeMiao1026/CloudFinalProject](https://github.com/YeMiao1026/CloudFinalProject)<br>
+2. ⬆️ Pushed undefined commit(s) to [YeMiao1026/CloudFinalProject](https://github.com/YeMiao1026/CloudFinalProject)<br>
+3. 💪 Opened PR [#1](undefined) in [YeMiao1026/CloudFinalProject](https://github.com/YeMiao1026/CloudFinalProject)<br>
+4. ⬆️ Pushed undefined commit(s) to [YeMiao1026/CloudFinalProject](https://github.com/YeMiao1026/CloudFinalProject)<br>
+5. ⬆️ Pushed undefined commit(s) to [YeMiao1026/CloudFinalProject](https://github.com/YeMiao1026/CloudFinalProject)<br>
 <!--RECENT_ACTIVITY:end-->
 
 ---
