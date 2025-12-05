@@ -3,7 +3,6 @@ name: Update Activity Log
 on:
   schedule:
     # 每天 UTC 02:00（台灣時間 10:00）執行一次
-    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
